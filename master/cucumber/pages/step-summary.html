@@ -77,38 +77,47 @@ font-src * data: blob: 'unsafe-inline';"/>
             var chart = new Chart(ctx, {
   "data": {
     "labels": [
+      "Empty database",
       "The following organizations are registered",
       "The following campaigns are associated to the {} organization",
       "The following users are members of organization {}",
       "The following contents are saved in the organization {}",
+      "{} grants following users with organization authorities",
       "Following users have corresponding amount left on budgets",
       "{} submit the following donations",
       "The following campaigns are running",
       "{} has {} donation on the {} budget",
-      "Empty database",
       "The following campaigns uses the {} budget",
       "The following campaigns have a deadline reached",
+      "Verify that following users are granted with organization authorities",
       "The following budgets are available in the organization {}",
-      "{} is logged in"
+      "{} is logged in",
+      "The following users are granted with organization authorities"
     ],
     "datasets": [
       {
         "data": [
+          8,
+          8,
           7,
+          8,
           7,
-          7,
-          7,
+          1,
           7,
           7,
           6,
           9,
           7,
-          7,
+          1,
           1,
           7,
-          7
+          8,
+          1
         ],
         "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
@@ -139,9 +148,15 @@ font-src * data: blob: 'unsafe-inline';"/>
           0,
           0,
           0,
+          0,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
@@ -172,9 +187,15 @@ font-src * data: blob: 'unsafe-inline';"/>
           0,
           0,
           0,
+          0,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
@@ -205,7 +226,7 @@ font-src * data: blob: 'unsafe-inline';"/>
           "stacked": true,
           "scaleLabel": {
             "display": true,
-            "labelString": "13 Steps"
+            "labelString": "16 Steps"
           },
           "stepSize": 0.0
         }
@@ -317,7 +338,7 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 <a class="nav-link " href="pages/feature-summary.html">All Features</a>
                     </li>
             </ul>
-            <span class="text-light">2020-03-23 20:05:05</span>
+            <span class="text-light">2020-03-26 15:43:12</span>
         </div>
     </nav>
     <main role="main" class="container">
@@ -343,14 +364,14 @@ font-src * data: blob: 'unsafe-inline';"/>
             <div class="card-body">
             <ul class="list-group list-group-flush" data-cluecumber-item="step-summary">
                 <li class="list-group-item">
-                    13         Steps
+                    16         Steps
  in
                     <br>
-                    7         Scenarios
+                    8         Scenarios
 
                 </li>
                 <li class="list-group-item">
-                    7 passed     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+                    8 passed     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
        title="passed"><span style="display:none">passed</span></i>
 
                     <br>
@@ -396,21 +417,39 @@ font-src * data: blob: 'unsafe-inline';"/>
                 <tbody>
                     <tr>
                         <td class="text-left">
+                            <span data-toggle="tooltip" title="fr.thomah.valyou.steps.CommonStepDefinitions.emptyDatabase()">
+                                <a href="pages/step-scenarios/step_092539137.html">Empty database</a>
+                            </span>
+                        </td>
+                        <td class="text-right"><strong>8</strong></td>
+                        <td class="text-right">8</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 029ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 075ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 046ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
                             <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.theFollowingOrganizationsAreRegistered(io.cucumber.datatable.DataTable)">
                                 <a href="pages/step-scenarios/step_1249534736.html">The following organizations are registered</a>
                             </span>
                         </td>
-                        <td class="text-right"><strong>7</strong></td>
-                        <td class="text-right">7</td>
+                        <td class="text-right"><strong>8</strong></td>
+                        <td class="text-right">8</td>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 011ms</a>
+                                <a href="pages/scenario-detail/scenario_7.html">0m 00s 018ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 046ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 092ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 027ms</td>
+                        <td class="text-right small">0m 00s 038ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -426,9 +465,9 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 <a href="pages/scenario-detail/scenario_6.html">0m 00s 003ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 012ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 009ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 006ms</td>
+                        <td class="text-right small">0m 00s 004ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -436,17 +475,17 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 <a href="pages/step-scenarios/step_01030040524.html">The following users are members of organization {}</a>
                             </span>
                         </td>
-                        <td class="text-right"><strong>7</strong></td>
-                        <td class="text-right">7</td>
+                        <td class="text-right"><strong>8</strong></td>
+                        <td class="text-right">8</td>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 205ms</a>
+                                <a href="pages/scenario-detail/scenario_7.html">0m 00s 177ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_7.html">0m 00s 221ms</a>
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 376ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 214ms</td>
+                        <td class="text-right small">0m 00s 222ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -459,12 +498,30 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 002ms</a>
+                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 001ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 009ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 023ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 004ms</td>
+                        <td class="text-right small">0m 00s 005ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="fr.thomah.valyou.steps.OrganizationAuthorityStepDefinitions.grantsFollowingUsersWithOrganizationAuthorities(java.lang.String,io.cucumber.datatable.DataTable)">
+                                <a href="pages/step-scenarios/step_0879800287.html">{} grants following users with organization authorities</a>
+                            </span>
+                        </td>
+                        <td class="text-right"><strong>1</strong></td>
+                        <td class="text-right">1</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 188ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 188ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 188ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -477,12 +534,12 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 000ms</a>
+                                <a href="pages/scenario-detail/scenario_2.html">0m 00s 000ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 006ms</a>
+                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 008ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 002ms</td>
+                        <td class="text-right small">0m 00s 003ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -495,12 +552,12 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_6.html">0m 00s 052ms</a>
+                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 053ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_2.html">0m 00s 209ms</a>
+                                <a href="pages/scenario-detail/scenario_2.html">0m 00s 225ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 110ms</td>
+                        <td class="text-right small">0m 00s 119ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -513,12 +570,12 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 002ms</a>
+                                <a href="pages/scenario-detail/scenario_5.html">0m 00s 001ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 011ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 012ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 003ms</td>
+                        <td class="text-right small">0m 00s 004ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -534,27 +591,9 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 <a href="pages/scenario-detail/scenario_6.html">0m 00s 000ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 013ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 008ms</a>
                         </td>
                         <td class="text-right small">0m 00s 002ms</td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">
-                            <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.emptyDatabase()">
-                                <a href="pages/step-scenarios/step_01232304776.html">Empty database</a>
-                            </span>
-                        </td>
-                        <td class="text-right"><strong>7</strong></td>
-                        <td class="text-right">7</td>
-                        <td class="text-right">0</td>
-                        <td class="text-right">0</td>
-                        <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 031ms</a>
-                        </td>
-                        <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_2.html">0m 00s 087ms</a>
-                        </td>
-                        <td class="text-right small">0m 00s 059ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -567,12 +606,12 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_7.html">0m 00s 004ms</a>
+                                <a href="pages/scenario-detail/scenario_6.html">0m 00s 005ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 012ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 024ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 007ms</td>
+                        <td class="text-right small">0m 00s 011ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -585,12 +624,30 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 002ms</a>
+                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 007ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 002ms</a>
+                                <a href="pages/scenario-detail/scenario_3.html">0m 00s 007ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 002ms</td>
+                        <td class="text-right small">0m 00s 007ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="fr.thomah.valyou.steps.OrganizationAuthorityStepDefinitions.verifyThatFollowingUsersAreGrantedWithOrganizationAuthorities(io.cucumber.datatable.DataTable)">
+                                <a href="pages/step-scenarios/step_0135643918.html">Verify that following users are granted with organization authorities</a>
+                            </span>
+                        </td>
+                        <td class="text-right"><strong>1</strong></td>
+                        <td class="text-right">1</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 007ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 007ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 007ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -603,12 +660,12 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_6.html">0m 00s 002ms</a>
+                                <a href="pages/scenario-detail/scenario_6.html">0m 00s 001ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 012ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 00s 058ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 004ms</td>
+                        <td class="text-right small">0m 00s 011ms</td>
                     </tr>
                     <tr>
                         <td class="text-left">
@@ -616,17 +673,35 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 <a href="pages/step-scenarios/step_01736803929.html">{} is logged in</a>
                             </span>
                         </td>
-                        <td class="text-right"><strong>7</strong></td>
-                        <td class="text-right">7</td>
+                        <td class="text-right"><strong>8</strong></td>
+                        <td class="text-right">8</td>
                         <td class="text-right">0</td>
                         <td class="text-right">0</td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_4.html">0m 00s 132ms</a>
+                                <a href="pages/scenario-detail/scenario_6.html">0m 00s 114ms</a>
                         </td>
                         <td class="text-right small">
-                                <a href="pages/scenario-detail/scenario_1.html">0m 01s 087ms</a>
+                                <a href="pages/scenario-detail/scenario_1.html">0m 01s 127ms</a>
                         </td>
-                        <td class="text-right small">0m 00s 278ms</td>
+                        <td class="text-right small">0m 00s 252ms</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            <span data-toggle="tooltip" title="fr.thomah.valyou.steps.OrganizationAuthorityStepDefinitions.theFollowingUsersAreGrantedWithOrganizationAuthorities(io.cucumber.datatable.DataTable)">
+                                <a href="pages/step-scenarios/step_520795735.html">The following users are granted with organization authorities</a>
+                            </span>
+                        </td>
+                        <td class="text-right"><strong>1</strong></td>
+                        <td class="text-right">1</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right">0</td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 037ms</a>
+                        </td>
+                        <td class="text-right small">
+                                <a href="pages/scenario-detail/scenario_8.html">0m 00s 037ms</a>
+                        </td>
+                        <td class="text-right small">0m 00s 037ms</td>
                     </tr>
                 </tbody>
             </table>
@@ -639,7 +714,7 @@ font-src * data: blob: 'unsafe-inline';"/>
 
 <footer class="footer navbar-dark">
     <div class="container-fluid">
-        <span>Cluecumber Report Plugin version 2.3.4 - Report generated on 2020-03-23 20:05:05.</span>
+        <span>Cluecumber Report Plugin version 2.3.4 - Report generated on 2020-03-26 15:43:12.</span>
     </div>
 </footer>    </body>
     </html>
