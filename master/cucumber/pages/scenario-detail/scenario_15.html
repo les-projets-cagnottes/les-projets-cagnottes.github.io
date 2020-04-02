@@ -78,17 +78,14 @@ font-src * data: blob: 'unsafe-inline';"/>
   "data": {
     "labels": [
       "Empty database",
+      "The following users are not registered",
+      "The following organizations are not registered",
       "The following organizations are registered",
       "The following users are members of organization \"Unnamed Company\"",
-      "The following contents are saved",
-      "The following budgets are available",
-      "The following campaigns are running",
-      "The following campaigns are associated to the \"Unnamed Company\" organization",
-      "The following campaigns uses the \"Annual Company Pot\" budget",
+      "The following users are granted with organization authorities",
       "\"Mike\" is logged in",
-      "\"Mike\" submit the following donations",
-      "\"Mike\" has \"1\" donation on the \"Annual Company Pot\" budget",
-      "Following users have corresponding amount left on budgets"
+      "\"Mike\" withdraw organization authorities to following users",
+      "Verify that following users have the correct number of organization authorities"
     ],
     "datasets": [
       {
@@ -101,15 +98,9 @@ font-src * data: blob: 'unsafe-inline';"/>
           0,
           0,
           0,
-          0,
-          0,
-          0,
           0
         ],
         "backgroundColor": [
-          "rgba(40, 167, 69, 1.000)",
-          "rgba(40, 167, 69, 1.000)",
-          "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
@@ -133,15 +124,9 @@ font-src * data: blob: 'unsafe-inline';"/>
           0,
           0,
           0,
-          0,
-          0,
-          0,
           0
         ],
         "backgroundColor": [
-          "rgba(220, 53, 69, 1.000)",
-          "rgba(220, 53, 69, 1.000)",
-          "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
@@ -165,15 +150,9 @@ font-src * data: blob: 'unsafe-inline';"/>
           0,
           0,
           0,
-          0,
-          0,
-          0,
           0
         ],
         "backgroundColor": [
-          "rgba(255, 193, 7, 1.000)",
-          "rgba(255, 193, 7, 1.000)",
-          "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
@@ -319,8 +298,8 @@ font-src * data: blob: 'unsafe-inline';"/>
     <main role="main" class="container">
         <div class="cluecumber-template">
             <div class="pb-2 mt-4 mb-2 border-bottom">
-                        <h5><a href="pages/feature-scenarios/feature_2.html">Donation</a></h5>
-                    <h3>A member cannot contribute on a campaign if he has not enough budget</h3>
+                        <h5><a href="pages/feature-scenarios/feature_4.html">Organization Authorities</a></h5>
+                    <h3>An organization owner cannot grant if organization or member is not existing</h3>
             </div>
 
     <div class="row" id="scenario-detail">
@@ -338,9 +317,9 @@ font-src * data: blob: 'unsafe-inline';"/>
         <div class="card h-100">
                 <div class="card-header">Scenario Info</div>
             <div class="card-body">
-                <li class="list-group-item">Started on:<br>2020-04-02 16:47:04</li>
-                <li class="list-group-item">Ended on:<br>2020-04-02 16:47:05</li>
-            <li class="list-group-item">Test Runtime:<br>0m 00s 472ms</li>
+                <li class="list-group-item">Started on:<br>2020-04-02 16:47:07</li>
+                <li class="list-group-item">Ended on:<br>2020-04-02 16:47:07</li>
+            <li class="list-group-item">Test Runtime:<br>0m 00s 496ms</li>
             <li class="list-group-item">            </li>
             </div>
         </div>
@@ -351,11 +330,11 @@ font-src * data: blob: 'unsafe-inline';"/>
             <div class="card-body">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    12         Steps
+                    9         Steps
 
                 </li>
                 <li class="list-group-item">
-                    12 passed     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+                    9 passed     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
        title="passed"><span style="display:none">passed</span></i>
 
                     <br>
@@ -390,7 +369,7 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 </span>
                             </div>
                             <div class="col-2 text-left small">
-                                0m 00s 043ms
+                                0m 00s 022ms
                             </div>
                             <div class="col-1 text-right">
     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
@@ -403,12 +382,76 @@ font-src * data: blob: 'unsafe-inline';"/>
                         <div class="row row_passed table-row-passed">
                             <div class="col-1 text-left small">2.</div>
                             <div class="col-8 text-left">
+                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.UserStepDefinitions.theFollowingUsersAreNotRegistered(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_01584142506.html"><span class="keyword">And </span> The following users are not registered</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 093ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>firstname</td>
+                                                        <td>email</td>
+                                                        <td>password</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sabrina</td>
+                                                        <td>sabrina@unnamedcompany.com</td>
+                                                        <td>sabrina</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-1 text-left small">3.</div>
+                            <div class="col-8 text-left">
+                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.CommonStepDefinitions.theFollowingOrganizationsAreNotRegistered(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_0241763618.html"><span class="keyword">And </span> The following organizations are not registered</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 000ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>name</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Nonexistent Company</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-1 text-left small">4.</div>
+                            <div class="col-8 text-left">
                                 <span data-toggle="tooltip" title="fr.thomah.valyou.steps.CommonStepDefinitions.theFollowingOrganizationsAreRegistered(io.cucumber.datatable.DataTable)">
                                     <a href="pages/step-scenarios/step_510890903.html"><span class="keyword">And </span> The following organizations are registered</a>
                                 </span>
                             </div>
                             <div class="col-2 text-left small">
-                                0m 00s 018ms
+                                0m 00s 009ms
                             </div>
                             <div class="col-1 text-right">
     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
@@ -431,14 +474,14 @@ font-src * data: blob: 'unsafe-inline';"/>
 
 
                         <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">3.</div>
+                            <div class="col-1 text-left small">5.</div>
                             <div class="col-8 text-left">
                                 <span data-toggle="tooltip" title="fr.thomah.valyou.steps.UserStepDefinitions.theFollowingUsersAreMembersOfOrganization(java.lang.String,io.cucumber.datatable.DataTable)">
                                     <a href="pages/step-scenarios/step_693677147.html"><span class="keyword">And </span> The following users are members of organization <span class="parameter">"Unnamed Company"</span></a>
                                 </span>
                             </div>
                             <div class="col-2 text-left small">
-                                0m 00s 184ms
+                                0m 00s 181ms
                             </div>
                             <div class="col-1 text-right">
     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
@@ -459,9 +502,9 @@ font-src * data: blob: 'unsafe-inline';"/>
                                                         <td>mike</td>
                                                 </tr>
                                                 <tr>
-                                                        <td>Sabrina</td>
-                                                        <td>sabrina@unnamedcompany.com</td>
-                                                        <td>sabrina</td>
+                                                        <td>Martin</td>
+                                                        <td>martin@unnamedcompany.com</td>
+                                                        <td>martin</td>
                                                 </tr>
                                         </table>
                                     </div>
@@ -470,10 +513,101 @@ font-src * data: blob: 'unsafe-inline';"/>
 
 
                         <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">4.</div>
+                            <div class="col-1 text-left small">6.</div>
                             <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.ContentStepDefinitions.theFollowingContentsAreSaved(io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_1502103770.html"><span class="keyword">And </span> The following contents are saved</a>
+                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.OrganizationAuthorityStepDefinitions.theFollowingUsersAreGrantedWithOrganizationAuthorities(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_520795735.html"><span class="keyword">And </span> The following users are granted with organization authorities</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 010ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>firstname</td>
+                                                        <td>organization</td>
+                                                        <td>authority</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Mike</td>
+                                                        <td>Unnamed Company</td>
+                                                        <td>ROLE_OWNER</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-1 text-left small">7.</div>
+                            <div class="col-8 text-left">
+                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.userIsLoggedIn(java.lang.String)">
+                                    <a href="pages/step-scenarios/step_01736803929.html"><span class="keyword">And </span> <span class="parameter">"Mike"</span> is logged in</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 111ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-1 text-left small">8.</div>
+                            <div class="col-8 text-left">
+                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.OrganizationAuthorityStepDefinitions.withdrawOrganizationAuthoritiesToFollowingUsers(java.lang.String,io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_1105789277.html"><span class="keyword">When </span> <span class="parameter">"Mike"</span> withdraw organization authorities to following users</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 065ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>firstname</td>
+                                                        <td>organization</td>
+                                                        <td>authority</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sabrina</td>
+                                                        <td>Unnamed Company</td>
+                                                        <td>ROLE_SPONSOR</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Martin</td>
+                                                        <td>Nonexistent Company</td>
+                                                        <td>ROLE_MANAGER</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-1 text-left small">9.</div>
+                            <div class="col-8 text-left">
+                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.OrganizationAuthorityStepDefinitions.verifyThatFollowingUsersHaveTheCorrectNumberOfOrganizationAuthorities(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_1658839334.html"><span class="keyword">Then </span> Verify that following users have the correct number of organization authorities</a>
                                 </span>
                             </div>
                             <div class="col-2 text-left small">
@@ -488,264 +622,19 @@ font-src * data: blob: 'unsafe-inline';"/>
                                     <div class="w-100 text-left border border-dark table-responsive">
                                         <table class="table table-hover small table-striped text-left pb-0">
                                                 <tr>
+                                                        <td>firstname</td>
                                                         <td>organization</td>
-                                                        <td>name</td>
-                                                        <td>value</td>
+                                                        <td>authorities</td>
                                                 </tr>
                                                 <tr>
-                                                        <td>Unnamed Company</td>
-                                                        <td>Terms of Use</td>
-                                                        <td>Blablabla</td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">5.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.BudgetStepDefinitions.theFollowingBudgetsAreAvailable(io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_0144873098.html"><span class="keyword">And </span> The following budgets are available</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 006ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                                <div class="row w-100 p-3 m-0 scenarioDataTable">
-                                    <div class="w-100 text-left border border-dark table-responsive">
-                                        <table class="table table-hover small table-striped text-left pb-0">
-                                                <tr>
-                                                        <td>organization</td>
-                                                        <td>name</td>
-                                                        <td>amountPerMember</td>
-                                                        <td>isDistributed</td>
-                                                        <td>sponsor</td>
-                                                        <td>rules</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Unnamed Company</td>
-                                                        <td>Annual Company Pot</td>
-                                                        <td>150</td>
-                                                        <td>true</td>
                                                         <td>Sabrina</td>
-                                                        <td>Terms of Use</td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">6.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.theFollowingCampaignsAreRunning(io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_2034987352.html"><span class="keyword">And </span> The following campaigns are running</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 003ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                                <div class="row w-100 p-3 m-0 scenarioDataTable">
-                                    <div class="w-100 text-left border border-dark table-responsive">
-                                        <table class="table table-hover small table-striped text-left pb-0">
-                                                <tr>
-                                                        <td>title</td>
-                                                        <td>leader</td>
-                                                        <td>status</td>
-                                                        <td>peopleRequired</td>
-                                                        <td>donationsRequired</td>
+                                                        <td>Unnamed Company</td>
+                                                        <td>0</td>
                                                 </tr>
                                                 <tr>
-                                                        <td>Awesome Campaign</td>
-                                                        <td>Mike</td>
-                                                        <td>A_IN_PROGRESS</td>
-                                                        <td>2</td>
-                                                        <td>200</td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">7.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.theFollowingCampaignsAreAssociatedToTheOrganization(java.lang.String,io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_01520117681.html"><span class="keyword">And </span> The following campaigns are associated to the <span class="parameter">"Unnamed Company"</span> organization</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 002ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                                <div class="row w-100 p-3 m-0 scenarioDataTable">
-                                    <div class="w-100 text-left border border-dark table-responsive">
-                                        <table class="table table-hover small table-striped text-left pb-0">
-                                                <tr>
-                                                        <td>title</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Awesome Campaign</td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">8.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.theFollowingCampaignsUsesTheBudget(java.lang.String,io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_1926294916.html"><span class="keyword">And </span> The following campaigns uses the <span class="parameter">"Annual Company Pot"</span> budget</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 003ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                                <div class="row w-100 p-3 m-0 scenarioDataTable">
-                                    <div class="w-100 text-left border border-dark table-responsive">
-                                        <table class="table table-hover small table-striped text-left pb-0">
-                                                <tr>
-                                                        <td>title</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Awesome Campaign</td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">9.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.userIsLoggedIn(java.lang.String)">
-                                    <a href="pages/step-scenarios/step_01736803929.html"><span class="keyword">And </span> <span class="parameter">"Mike"</span> is logged in</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 107ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">10.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.submitTheFollowingDonations(java.lang.String,io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_83264326.html"><span class="keyword">When </span> <span class="parameter">"Mike"</span> submit the following donations</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 096ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                                <div class="row w-100 p-3 m-0 scenarioDataTable">
-                                    <div class="w-100 text-left border border-dark table-responsive">
-                                        <table class="table table-hover small table-striped text-left pb-0">
-                                                <tr>
-                                                        <td>campaign</td>
-                                                        <td>budget</td>
-                                                        <td>contributor</td>
-                                                        <td>amount</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Awesome Campaign</td>
-                                                        <td>Annual Company Pot</td>
-                                                        <td>Mike</td>
-                                                        <td>50</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Awesome Campaign</td>
-                                                        <td>Annual Company Pot</td>
-                                                        <td>Mike</td>
-                                                        <td>150</td>
-                                                </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">11.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.hasDonationOnTheBudget(java.lang.String,java.lang.String,java.lang.String)">
-                                    <a href="pages/step-scenarios/step_02121928554.html"><span class="keyword">Then </span> <span class="parameter">"Mike"</span> has <span class="parameter">"1"</span> donation on the <span class="parameter">"Annual Company Pot"</span> budget</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 002ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                        </div>
-
-
-                        <div class="row row_passed table-row-passed">
-                            <div class="col-1 text-left small">12.</div>
-                            <div class="col-8 text-left">
-                                <span data-toggle="tooltip" title="fr.thomah.valyou.steps.DonationStepDefinitions.followingUsersHaveCorrespondingAmountLeftOnBudgets(io.cucumber.datatable.DataTable)">
-                                    <a href="pages/step-scenarios/step_723907114.html"><span class="keyword">And </span> Following users have corresponding amount left on budgets</a>
-                                </span>
-                            </div>
-                            <div class="col-2 text-left small">
-                                0m 00s 003ms
-                            </div>
-                            <div class="col-1 text-right">
-    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
-       title="passed"><span style="display:none">passed</span></i>
-                            </div>
-
-                                <div class="row w-100 p-3 m-0 scenarioDataTable">
-                                    <div class="w-100 text-left border border-dark table-responsive">
-                                        <table class="table table-hover small table-striped text-left pb-0">
-                                                <tr>
-                                                        <td>user</td>
-                                                        <td>budget</td>
-                                                        <td>amount</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Mike</td>
-                                                        <td>Annual Company Pot</td>
-                                                        <td>100</td>
+                                                        <td>Martin</td>
+                                                        <td>Nonexistent Company</td>
+                                                        <td>0</td>
                                                 </tr>
                                         </table>
                                     </div>
