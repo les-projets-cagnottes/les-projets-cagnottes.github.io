@@ -32,7 +32,7 @@ style-src * data: blob: 'unsafe-inline';
 font-src * data: blob: 'unsafe-inline';"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Cluecumber Report">
-<meta name="author" content="Cluecumber Report Plugin version 2.3.4">
+<meta name="author" content="Cluecumber Report Plugin version 2.5.0">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="css/datatables.min.css">
 <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
@@ -85,7 +85,7 @@ font-src * data: blob: 'unsafe-inline';"/>
     "datasets": [
       {
         "data": [
-          7,
+          2,
           0,
           0
         ],
@@ -174,7 +174,7 @@ font-src * data: blob: 'unsafe-inline';"/>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                                <a class="nav-link " href="index.html">All Scenarios</a>
+                                <a class="nav-link " href="pages/scenario-summary.html">All Scenarios</a>
                     </li>
                     <li class="nav-item">
                                 <a class="nav-link " href="pages/scenario-sequence.html">Scenario Sequence</a>
@@ -189,14 +189,18 @@ font-src * data: blob: 'unsafe-inline';"/>
                                 <a class="nav-link text-white" href="pages/feature-summary.html">All Features</a>
                     </li>
             </ul>
-            <span class="text-light">2020-04-13 17:07:40</span>
+            <span class="text-light">2020-05-21 14:50:35</span>
         </div>
     </nav>
     <main role="main" class="container">
         <div class="cluecumber-template">
             <div class="pb-2 mt-4 mb-2 border-bottom">
-                    <h3>Scenarios in Feature 'Donation - Create'</h3>
-                    <h5>  Verifies rules for create donations</h5>
+                    <h5>
+                            <a href="pages/feature-scenarios/feature_2.html">Campaign - Get Donations</a>
+                        <span class="small">classpath:features/campaign_getDonations.feature</span>
+                    </h5>
+                    <h3>Scenarios in Feature</h3>
+                    <h5>  Verifies rules for getting donations on a campaign</h5>
             </div>
 
 
@@ -217,11 +221,11 @@ font-src * data: blob: 'unsafe-inline';"/>
             <div class="card-body">
             <ul class="list-group list-group-flush">
                     <li class="list-group-item" data-cluecumber-item="total-start">
-                        Started on:<br>2020-04-13 17:07:27</li>
+                        Started on:<br>2020-05-21 14:50:19</li>
                     <li class="list-group-item" data-cluecumber-item="total-end">
-                        Ended on:<br>2020-04-13 17:07:31</li>
+                        Ended on:<br>2020-05-21 14:50:21</li>
                 <li class="list-group-item" data-cluecumber-item="total-runtime">
-                    Test Runtime:<br>0m 03s 450ms
+                    Test Runtime:<br>0m 01s 512ms
                 </li>
             </ul>
             </div>
@@ -233,12 +237,12 @@ font-src * data: blob: 'unsafe-inline';"/>
             <div class="card-body">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item" data-cluecumber-item="scenario-summary">
-                    7         Scenarios
+                    2         Scenarios
 
                 </li>
                 <li class="list-group-item" data-cluecumber-item="scenario-summary">
                         <a href="javascript:"
-                           onclick="document.location.hash='anchor-passed';">7
+                           onclick="document.location.hash='anchor-passed';">2
                             passed</a>     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
        title="passed"><span style="display:none">passed</span></i>
 
@@ -270,7 +274,7 @@ font-src * data: blob: 'unsafe-inline';"/>
                 <div class="card">
 
                             <div class="card-header border-color-passed">
-                                7
+                                2
         passed Scenarios
     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
        title="passed"><span style="display:none">passed</span></i>
@@ -290,128 +294,38 @@ font-src * data: blob: 'unsafe-inline';"/>
 
                                         <tr class="table-row-passed">
                                             <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
+                                                <span data-toggle="tooltip" title="  Verifies rules for getting donations on a campaign | classpath:features/campaign_getDonations.feature">
+                                                    <a href="pages/feature-scenarios/feature_2.html">Campaign - Get Donations</a>
                                                 </span>
                                             </td>
                                             <td class="text-left">
                                                 <a href="pages/scenario-detail/scenario_14.html"
-                                                   style="word-break: break-all">A member can contribute on a campaign in progress whose deadline has not been reached</a>
+                                                   style="word-break: break-all">A member of a campaign&#39;s organization can get campaign&#39;s donations</a>
                                             </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:27.740Z">
-                                                2020-04-13<br>17:07:27
+                                            <td class="text-center small" data-order="2020-05-21T14:50:19.979Z">
+                                                2020-05-21<br>14:50:19
                                             </td>
                                             <td class="text-right small"
-                                                data-order="536,746,000">
-                                                <span class="nobr">0m 00s 536ms</span>
+                                                data-order="737,396,000">
+                                                <span class="nobr">0m 00s 737ms</span>
                                             </td>
                                         </tr>
                                         <tr class="table-row-passed">
                                             <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
+                                                <span data-toggle="tooltip" title="  Verifies rules for getting donations on a campaign | classpath:features/campaign_getDonations.feature">
+                                                    <a href="pages/feature-scenarios/feature_2.html">Campaign - Get Donations</a>
                                                 </span>
                                             </td>
                                             <td class="text-left">
                                                 <a href="pages/scenario-detail/scenario_15.html"
-                                                   style="word-break: break-all">A member cannot contribute on a project with a nonexistent campaign, budget or contributor</a>
+                                                   style="word-break: break-all">A non-member of any campaign&#39;s organizations cannot get campaign&#39;s donations</a>
                                             </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:28.290Z">
-                                                2020-04-13<br>17:07:28
-                                            </td>
-                                            <td class="text-right small"
-                                                data-order="505,112,000">
-                                                <span class="nobr">0m 00s 505ms</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-row-passed">
-                                            <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
-                                                </span>
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="pages/scenario-detail/scenario_16.html"
-                                                   style="word-break: break-all">A member cannot contribute on a campaign in progress whose deadline has been reached</a>
-                                            </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:28.821Z">
-                                                2020-04-13<br>17:07:28
+                                            <td class="text-center small" data-order="2020-05-21T14:50:20.770Z">
+                                                2020-05-21<br>14:50:20
                                             </td>
                                             <td class="text-right small"
-                                                data-order="454,094,000">
-                                                <span class="nobr">0m 00s 454ms</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-row-passed">
-                                            <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
-                                                </span>
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="pages/scenario-detail/scenario_17.html"
-                                                   style="word-break: break-all">A member cannot contribute on a campaign not in progress</a>
-                                            </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:29.296Z">
-                                                2020-04-13<br>17:07:29
-                                            </td>
-                                            <td class="text-right small"
-                                                data-order="431,367,000">
-                                                <span class="nobr">0m 00s 431ms</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-row-passed">
-                                            <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
-                                                </span>
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="pages/scenario-detail/scenario_18.html"
-                                                   style="word-break: break-all">A member cannot contribute on a campaign not associated with the budget referenced</a>
-                                            </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:29.739Z">
-                                                2020-04-13<br>17:07:29
-                                            </td>
-                                            <td class="text-right small"
-                                                data-order="497,624,000">
-                                                <span class="nobr">0m 00s 497ms</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-row-passed">
-                                            <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
-                                                </span>
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="pages/scenario-detail/scenario_19.html"
-                                                   style="word-break: break-all">A member cannot contribute behalf of another member</a>
-                                            </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:30.261Z">
-                                                2020-04-13<br>17:07:30
-                                            </td>
-                                            <td class="text-right small"
-                                                data-order="427,587,000">
-                                                <span class="nobr">0m 00s 427ms</span>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-row-passed">
-                                            <td class="text-left">
-                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
-                                                    <a href="pages/feature-scenarios/feature_2.html">Donation - Create</a>
-                                                </span>
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="pages/scenario-detail/scenario_20.html"
-                                                   style="word-break: break-all">A member cannot contribute on a campaign if he has not enough budget</a>
-                                            </td>
-                                            <td class="text-center small" data-order="2020-04-13T17:07:30.700Z">
-                                                2020-04-13<br>17:07:30
-                                            </td>
-                                            <td class="text-right small"
-                                                data-order="490,691,000">
-                                                <span class="nobr">0m 00s 490ms</span>
+                                                data-order="721,154,000">
+                                                <span class="nobr">0m 00s 721ms</span>
                                             </td>
                                         </tr>
                             </tbody>
@@ -425,7 +339,7 @@ font-src * data: blob: 'unsafe-inline';"/>
 
 <footer class="footer navbar-dark">
     <div class="container-fluid">
-        <span>Cluecumber Report Plugin version 2.3.4 - Report generated on 2020-04-13 17:07:40.</span>
+        <span>Cluecumber Report Plugin version 2.5.0 - Report generated on 2020-05-21 14:50:35.</span>
     </div>
 </footer>    </body>
     </html>
