@@ -9,10 +9,13 @@ layout: home
 
 ## Introduction
 
-"Les Projets Cagnottes" is a collaborative platform about creating projects together as a community. This project is maintained by Valeuriad employees but as an open source project, it belongs to the community.
+"Les Projets Cagnottes" is a web platform to fund and realize project in a collaborative way. 
+It is mainly maintained by Valeuriad employees but as an open source project, it belongs to the community.
 
 ## Table of Contents
 
 1. [Architecture](architecture.md)
 2. [Getting Started](getting_started.md)
 3. [How to contribute](contribute.md)
+4. [Cucumber Report](https://les-projets-cagnottes.github.io/master/cucumber/index.html)
+5. [Swagger](https://les-projets-cagnottes.fr/api/docs/swagger-ui/index.html?configUrl=/api/docs/swagger-config#/)
