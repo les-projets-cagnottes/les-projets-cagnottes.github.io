@@ -1,0 +1,45 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  # product: Les Projets Cagnottes
+  # version: 6.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Welcome
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: News
+      url: /news.html
+      output: web, pdf
+
+    - title: Getting started
+      url: /getting_started.html
+      output: web, pdf
+
+    - title: Architecture
+      url: /architecture.html
+      output: web, pdf
+
+    - title: Contribute
+      url: /contribute.html
+      output: web, pdf
