@@ -107,9 +107,8 @@ description: "Technical documentation for 'Les Projets Cagnottes' platform. Also
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-# url: http://idratherbewriting.com
-# baseurl: /documentation-theme-jekyll
-
+url: https://les-projets-cagnottes.github.io
+baseurl: /
 
 github: [metadata]
 
