@@ -51,3 +51,15 @@ entries:
     - title: Setup Database
       url: /setup_db.html
       output: web, pdf
+
+  - title: Generated doc
+    output: web, pdf
+    folderitems:
+
+    - title: Cucumber
+      url: /cucumber.html
+      output: web, pdf
+
+    - title: Swagger
+      url: /swagger.html
+      output: web, pdf
