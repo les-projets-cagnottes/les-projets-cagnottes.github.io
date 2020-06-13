@@ -32,14 +32,22 @@ entries:
       url: /news.html
       output: web, pdf
 
-    - title: Getting started
-      url: /getting_started.html
-      output: web, pdf
-
     - title: Architecture
       url: /architecture.html
       output: web, pdf
 
     - title: Contribute
       url: /contribute.html
+      output: web, pdf
+
+  - title: Getting started
+    output: web, pdf
+    folderitems:
+
+    - title: Prerequisites
+      url: /prerequisites.html
+      output: web, pdf
+
+    - title: Setup Database
+      url: /setup_db.html
       output: web, pdf
