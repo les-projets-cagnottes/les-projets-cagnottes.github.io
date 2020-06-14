@@ -52,7 +52,7 @@ entries:
       url: /setup_db.html
       output: web, pdf
 
-  - title: Generated doc
+  - title: Links
     output: web, pdf
     folderitems:
 
