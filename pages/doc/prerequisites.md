@@ -22,6 +22,7 @@ As each component is made with a particular technology, you'll need to install a
 ## `slack-events-catcher`
 
 - NodeJS 12+ - [Download here](https://nodejs.org/en/download/)
+- ngrok - [Download here](https://ngrok.com/download)
 
 ## `les-projets-cagnottes.github.io`
 

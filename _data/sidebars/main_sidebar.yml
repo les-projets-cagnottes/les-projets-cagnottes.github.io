@@ -48,8 +48,28 @@ entries:
       url: /prerequisites.html
       output: web, pdf
 
+    - title: Setup Slack
+      url: /setup_slack.html
+      output: web, pdf
+
     - title: Setup Database
       url: /setup_db.html
+      output: web, pdf
+
+    - title: Install core
+      url: /install_core.html
+      output: web, pdf
+
+    - title: Install web
+      url: /install_web.html
+      output: web, pdf
+
+    - title: Install slack-events-catcher
+      url: /install_slack-events-catcher.html
+      output: web, pdf
+
+    - title: Install doc
+      url: /install_doc.html
       output: web, pdf
 
   - title: Links

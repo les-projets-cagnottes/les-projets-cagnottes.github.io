@@ -15,9 +15,9 @@ Every idea counts ! If you found a bug or have a suggestion to make, please crea
 
 ### Develop new features or consolidate current version
 
-Each release is decribed in a dedicated [Project](https://github.com/orgs/les-projets-cagnottes/backlog/projects). If you wanna contribute, just pick an issue you're comfortable with, assign it to yourself and move it inside the Project Kanban.
+Each release is decribed in a dedicated [Project](https://github.com/les-projets-cagnottes/backlog/projects). If you wanna contribute, just pick an issue you're comfortable with, assign it to yourself and move it inside the Project Kanban.
 
-Please, note that the platform was [developed by a single guy, who is not a developer, in his room](https://www.youtube.com/watch?v=MYZ67-Sh7kM). There are a lot of things to clean, fix security breaches, etc. You will encounter shitty pieces of code so please be indulgent and help me fix them :)
+Please, note that the platform was [developed by a single guy, who is not a developer](https://www.youtube.com/watch?v=MYZ67-Sh7kM). There are a lot of things to clean, fix security breaches, etc. You will encounter shitty pieces of code so please be indulgent and help me fix them :)
 
 ### Review
 
@@ -39,8 +39,7 @@ We are trying to make a fast, efficient and beautiful user interface here. If, b
 
 These are the accounts you may need to contribute on this project. Please ask team members for them;
 - GitHub account granted on this organization
-- A Slack Test Workspace / Account
-- An account on the test instance [les-projets-cagnottes.herokuapp.com](https://les-projets-cagnottes.herokuapp.com)
+- An account on the integration environment [les-projets-cagnottes.herokuapp.com](https://les-projets-cagnottes.herokuapp.com)
 
 ## How do we manage this project ?
 
