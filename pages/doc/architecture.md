@@ -34,7 +34,7 @@ When conditions are met, this component call the appropriate endpoint on the `co
 
 ### The user interface
 
-The`web` component is the user interface of the platform. It is basically a **web client** grabbing data and executing functions through the `core` API. The majority of the resources are **stored in cache of web browsers** to optimize efficiency. Today, this obliges us to inform user that they need to empty their cache after an update.
+The`web` component is the user interface of the platform. It is basically a **web client** grabbing data and executing functions through the `core` API. The majority of the resources are **stored in cache of web browsers** to optimize efficiency. Today, this forces us to inform user that they need to empty their cache after an update.
 
 ### This documentation
 
