@@ -35,7 +35,7 @@ Then, run the following command :
 mvn clean install spring-boot:run
 ```
 
-When the terminal print something like `Started LPCCoreApplication in 5.15 seconds (JVM running for 5.59)`, it means the core component is successfully installed and running. 
+When the terminal print something like `Started LPCCoreApplication in 5.15 seconds (JVM running for 5.59)`, it means the core component is successfully installed and running. In the logs, you'll get default credentials for admin user. Note them in a temporary file.
 
 The database should be initialized now. Open DBeaver and navigate to `lesprojetscagnottes > Schemas > public > Tables`. If there are a list of tables, it's OK.
 
