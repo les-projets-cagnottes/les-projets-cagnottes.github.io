@@ -30,3 +30,4 @@ As each component is made with a particular technology, you'll need to install a
 ## `les-projets-cagnottes.github.io`
 
 - Ruby 2.6+ - [Download here](https://rubyinstaller.org/downloads/)
+- Bundler - [Download here](https://bundler.io/)
