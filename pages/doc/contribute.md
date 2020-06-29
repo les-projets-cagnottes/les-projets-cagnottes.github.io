@@ -46,3 +46,5 @@ These are the accounts you may need to contribute on this project. Please ask te
 Any code modification should be done on a dedicated branch created from **develop**. When your modifications are ok (=tested a least on your workstation), just submit a *Pull Request* on the **develop** branch to another active member of the project. Be carefull with the description by adding every breaking change (environment variable to add, change of database structure, etc.).
 
 When the Pull Request is merged, you can close the issue, move it inside the Kanban and pick another one.
+
+{% include image.html file="doc/git_workflow.svg" url="/images/doc/git_workflow.svg" alt="Simplified git workflow" max-width="600" %}
