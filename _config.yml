@@ -3,7 +3,7 @@ repository: les-projets-cagnottes/les-projets-cagnottes.github.io
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Les Projets Cagnottes Doc
+topnav_title: Les Projets Cagnottes Documentation
 # this appears on the top navigation bar next to the home button
 
 site_title: Documentation for 'Les Projets Cagnottes' platform
