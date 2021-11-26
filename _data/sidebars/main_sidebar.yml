@@ -32,10 +32,6 @@ entries:
       url: /news.html
       output: web, pdf
 
-    - title: Architecture
-      url: /architecture.html
-      output: web, pdf
-
     - title: Contribute
       url: /contribute.html
       output: web, pdf
@@ -70,6 +66,22 @@ entries:
 
     - title: Install doc
       url: /install_doc.html
+      output: web, pdf
+
+  - title: Architecture
+    output: web, pdf
+    folderitems:
+
+    - title: General Architecture
+      url: /architecture.html
+      output: web, pdf
+
+    - title: Core Component
+      url: /architecture_core.html
+      output: web, pdf
+
+    - title: Web Component
+      url: /architecture_web.html
       output: web, pdf
 
   - title: Links

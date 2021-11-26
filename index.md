@@ -1,7 +1,6 @@
 ---
 title: "Welcome"
 keywords: welcome
-tags: [information]
 sidebar: main_sidebar
 permalink: index.html
 ---

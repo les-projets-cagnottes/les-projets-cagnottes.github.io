@@ -11,7 +11,7 @@ As each component is made with a particular technology, you'll need to install a
 
 - Docker - [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 - PostgreSQL 12+ - [Download here](https://www.postgresql.org/download/)
-- Java 13+ - [Download here](https://jdk.java.net/13/)
+- Java 16+ - [Download here](https://jdk.java.net/16/)
 - Maven 3+ - [Download here](https://maven.apache.org/download.cgi)
 - A PostgreSQL Client - [Download DBeaver here](https://dbeaver.io/download/)
 
