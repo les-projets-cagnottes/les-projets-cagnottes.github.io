@@ -12,18 +12,24 @@ Checkout the Github repository : [https://github.com/les-projets-cagnottes/core]
 Create the following environment variables in your IDE launcher :
 
 ```bash
+# Web server
 PORT=8080
+
+# Database
 SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/lesprojetscagnottes
 SPRING_DATASOURCE_USERNAME=lesprojetscagnottes
 SPRING_DATASOURCE_PASSWORD=lesprojetscagnottes
 SPRING_JPA_HIBERNATE_DDL-AUTO=update
-LOGGING_LEVEL_FR_LESPROJETSCAGNOTTES=DEBUG
-LPC_SLACK_CLIENT_ID=<Slack Client ID>
-LPC_SLACK_CLIENT_SECRET=<Slack Client Secret>
-LPC_WEB_URL=http://localhost:4200
-```
 
-{% include note.html content="In these environment variables, use Slack Client ID and Slack Client Secret from [Setup Slack#Install App to the workspace](/setup_slack.html#install-app-to-the-workspace)." %}
+# Log level
+LOGGING_LEVEL_FR_LESPROJETSCAGNOTTES=DEBUG
+
+# Exposition
+FR_LESPROJETSCAGNOTTES_CORE_URL=http://localhost:8080
+
+# Web component
+FR_LESPROJETSCAGNOTTES_WEB_URL=http://localhost:4200
+```
 
 For example, in IntelliJ, the launcher is configured the following way.
 
@@ -40,9 +46,3 @@ When the terminal print something like `Started LPCCoreApplication in 5.15 secon
 The database should be initialized now. Open DBeaver and navigate to `lesprojetscagnottes > Schemas > public > Tables`. If there are a list of tables, it's OK.
 
 {% include image.html file="doc/core_init_db.png" caption="Database structure is created" %}
-
-Finally, you need to add stored functions in that DB. Open the file `src/main/resources/create.sql` with DBeaver and execute it.
-
-{% include image.html file="doc/core_create_db_functions.png" caption="Create DB functions" %}
-
-If no error pops up, it's all ready to go !

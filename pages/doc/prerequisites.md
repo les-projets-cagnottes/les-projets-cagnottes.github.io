@@ -11,20 +11,20 @@ As each component is made with a particular technology, you'll need to install a
 
 - Docker - [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 - PostgreSQL 12+ - [Download here](https://www.postgresql.org/download/)
-- Java 16+ - [Download here](https://jdk.java.net/16/)
+- Java 17+ - [Download here](https://jdk.java.net/17/)
 - Maven 3+ - [Download here](https://maven.apache.org/download.cgi)
 - A PostgreSQL Client - [Download DBeaver here](https://dbeaver.io/download/)
 
 ## `web`
 
 - Docker - [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
-- NodeJS 12+ - [Download here](https://nodejs.org/en/download/)
-- Angular CLI 9+ - [Download here](https://cli.angular.io)
+- NodeJS 16+ - [Download here](https://nodejs.org/en/download/)
+- Angular CLI 13+ - [Download here](https://cli.angular.io)
 
 ## `slack-events-catcher`
 
 - Docker - [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
-- NodeJS 12+ - [Download here](https://nodejs.org/en/download/)
+- NodeJS 16+ - [Download here](https://nodejs.org/en/download/)
 - ngrok - [Download here](https://ngrok.com/download)
 
 ## `les-projets-cagnottes.github.io`
