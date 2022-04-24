@@ -44,10 +44,6 @@ entries:
       url: /prerequisites.html
       output: web, pdf
 
-    - title: Setup Slack
-      url: /setup_slack.html
-      output: web, pdf
-
     - title: Setup Database
       url: /setup_db.html
       output: web, pdf
@@ -58,10 +54,6 @@ entries:
 
     - title: Install web
       url: /install_web.html
-      output: web, pdf
-
-    - title: Install slack-events-catcher
-      url: /install_slack-events-catcher.html
       output: web, pdf
 
     - title: Install doc
@@ -82,6 +74,26 @@ entries:
 
     - title: Web Component
       url: /architecture_web.html
+      output: web, pdf
+
+  - title: Connecting with Slack
+    output: web, pdf
+    folderitems:
+
+    - title: Setup Slack
+      url: /setup_slack.html
+      output: web, pdf
+
+    - title: Update core component
+      url: /slack_core.html
+      output: web, pdf
+
+    - title: Update web component
+      url: /slack_web.html
+      output: web, pdf
+
+    - title: Install slack-events-catcher
+      url: /install_slack-events-catcher.html
       output: web, pdf
 
   - title: Links
