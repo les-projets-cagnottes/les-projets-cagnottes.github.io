@@ -23,11 +23,11 @@ Each functional object (budget, campaign, idea, ...) has its package in `src/mai
 
 {% include image.html file="doc/data_model.png" url="/images/doc/data_model.png" alt="Data Model" max-width="600" %}
 
-This component also provides stored procedures in DB written in `src/main/resources/create.sql`.
+All database structure (tables, foreign keys, functions, ...) are provided using [Liquibase](https://www.liquibase.org/). Each change in the structure is described in a changeset and all changesets of a version are regrouped in a changelog file inside the `src/main/resources/db/changelog` folder.
 
 ## Tests
 
-Automated tests are written ìn `src/test`using Cucumber.
+Automated tests are written ìn `src/test` using Cucumber.
 
 Features are destribed in the `features` folder. Each scenario of a feature is composed of functional steps which needs to be translated in Java to perform the corresponding step. These translations are written in a `steps` package inside the `src/test/java` folder.
 
