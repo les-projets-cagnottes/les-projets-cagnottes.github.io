@@ -1,0 +1,864 @@
+
+    <!--
+    Copyright 2019 trivago N.V.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <base href="../..">
+    <head title="Cluecumber Report - Scenario Detail">
+        <title>Cluecumber Report - Scenario Detail</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+connect-src * data: blob: 'unsafe-inline';
+img-src * data: blob: 'unsafe-inline';
+frame-src * data: blob: ;
+style-src * data: blob: 'unsafe-inline';
+font-src * data: blob: 'unsafe-inline';"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Cluecumber Report">
+<meta name="author" content="Cluecumber Report Plugin version 2.8.0">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/datatables.min.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
+<link rel="stylesheet" href="css/cluecumber.css" type="text/css">
+<link rel="stylesheet" href="css/cluecumber-custom.css"/>
+<link rel="stylesheet" href="css/cluecumber-additional.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/datatables.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/Chart.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+            // Data tables
+            $('.renderAsDataTable').on('draw.dt', function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            }).DataTable({
+                "oLanguage": {
+                    "sSearch": "Search:"
+                },
+                "pageLength": 25,
+                "responsive": true
+            });
+
+            $('.collapse').on('shown.bs.collapse', function (e) {
+                $(e.target).find("iframe").each(function (index, iframe) {
+                    resizeIframe(iframe);
+                })
+            });
+
+            // Lightbox
+            $("a.grouped_elements").fancybox();
+
+            // Tool tips
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Chart
+            var canvas = document.getElementById('chart-area');
+            var ctx = canvas.getContext("2d");
+            var chart = new Chart(ctx, {
+  "data": {
+    "labels": [
+      "Empty database",
+      "The following organizations are registered",
+      "The following users are registered",
+      "The following users are members of organizations",
+      "The following contents are saved",
+      "The following budgets are available",
+      "The following accounts are created",
+      "The following projects are created",
+      "The following campaigns are running",
+      "The following donations are made",
+      "\"Nicolas\" is logged in",
+      "\"Nicolas\" gets donations of the \"Awesome Campaign\" campaign",
+      "Last HTTP code was \"403\""
+    ],
+    "datasets": [
+      {
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)"
+        ],
+        "label": "passed",
+        "stack": "complete"
+      },
+      {
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)"
+        ],
+        "label": "failed",
+        "stack": "complete"
+      },
+      {
+        "data": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)"
+        ],
+        "label": "skipped",
+        "stack": "complete"
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "xAxes": [
+        {
+          "ticks": {
+            "min": 0,
+            "stepSize": 0,
+            "display": false
+          },
+          "stacked": true,
+          "scaleLabel": {
+            "display": true,
+            "labelString": "Steps"
+          },
+          "stepSize": 0.0
+        }
+      ],
+      "yAxes": [
+        {
+          "ticks": {
+            "min": 0,
+            "stepSize": 0,
+            "display": true
+          },
+          "stacked": true,
+          "scaleLabel": {
+            "display": true,
+            "labelString": "Step Runtime (seconds)"
+          },
+          "stepSize": 0.0
+        }
+      ]
+    },
+    "events": [
+      "click",
+      "mousemove"
+    ]
+  },
+  "type": "bar"
+});
+
+            var original;
+            if (chart.config.type === "pie") {
+                original = Chart.defaults.pie.legend.onClick;
+            } else {
+                original = Chart.defaults.global.legend.onClick;
+            }
+
+            chart.options.onClick = function (evt, elements) {
+                if (chart.config.type !== "pie") return;
+                chartArea = elements[0];
+                if (chartArea === undefined) return;
+                chartArea.hidden = !chartArea.hidden;
+                chart.update();
+                toggleVisibilityByStatus(chartArea._model.label, !chartArea.hidden)
+            };
+
+            chart.options.legend.onClick = function (evt, label) {
+                original.call(this, evt, label);
+                toggleVisibilityByStatus(label.text, label.hidden);
+            };
+
+            function toggleVisibilityByStatus(statusText, show) {
+                var card = $("#card_" + statusText);
+                if (card !== undefined) {
+                    if (show) {
+                        card.show();
+                    } else {
+                        card.hide();
+                    }
+                }
+
+                var row = $(".table-row-" + statusText);
+                if (row !== undefined) {
+                    if (show) {
+                        row.show();
+                    } else {
+                        row.hide();
+                    }
+                }
+            }
+
+
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='before-after-hooks-button']").click();
+            }
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='step-hooks-button']").click();
+            }
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='doc-strings-button']").click();
+            }
+        }
+    );
+
+    function resizeIframe(iframe) {
+        iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 25) + 'px';
+    }
+</script>    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/scenario-summary.html">All Scenarios</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/scenario-sequence.html">Scenario Sequence</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/tag-summary.html">All Tags</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/step-summary.html">All Steps</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/feature-summary.html">All Features</a>
+                    </li>
+            </ul>
+            <span class="text-light">2022-10-30 19:20:36</span>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        <div class="cluecumber-template">
+            <div class="pb-2 mt-4 mb-2 border-bottom">
+                    <h5>
+                            <a href="pages/feature-scenarios/feature_4.html">Campaign - Get Donations</a>
+                        <span class="small">classpath:features/campaign_getdonations.feature</span>
+                    </h5>
+                    <h3>A non-member of campaign&#39;s organization cannot get campaign&#39;s donations</h3>
+            </div>
+
+
+    <div class="row" id="scenario-detail">
+    <div class="col-sm-6  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Step Results</div>
+            <div class="card-body">
+    <div id="canvas-holder" class="w-100 text-center" style="min-height: 15rem;" data-cluecumber-item="chart">
+        <canvas id="chart-area" class="w-100"></canvas>
+    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Scenario Info</div>
+            <div class="card-body">
+                <li class="list-group-item">Started on:<br>2022-10-30 19:20:13</li>
+                <li class="list-group-item">Ended on:<br>2022-10-30 19:20:14</li>
+            <li class="list-group-item">Test Runtime:<br>0m 00s 851ms</li>
+            <li class="list-group-item">            </li>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Step Summary</div>
+            <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    13         Steps
+
+                </li>
+                <li class="list-group-item">
+                    13 passed     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+
+                    <br>
+                    0 failed     <i class="color-failed cluecumber-icon icon-failed" data-toggle="tooltip"
+       title="failed"><span style="display:none">failed</span></i>
+
+                    <br>
+                    0 skipped     <i class="color-skipped cluecumber-icon icon-skipped" data-toggle="tooltip"
+       title="skipped"><span style="display:none">skipped</span></i>
+
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <ul class="list-group list-group-flush">
+
+
+    <div class="col-sm-12  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Steps</div>
+            <div class="card-body">
+                <li class="list-group-item">
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">1.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.CommonStepDefinitions.emptyDatabase()">
+                                    <a href="pages/step-scenarios/step_02010603918.html"><span
+                                                class="keyword">Given </span> Empty database</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 115ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">2.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.CommonStepDefinitions.theFollowingOrganizationsAreRegistered(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_729761290.html"><span
+                                                class="keyword">And </span> The following organizations are registered</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 043ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>name</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Unnamed Company</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Another Company</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">3.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.UserStepDefinitions.theFollowingUsersAreRegistered(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_01340452782.html"><span
+                                                class="keyword">And </span> The following users are registered</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 418ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>firstname</td>
+                                                        <td>email</td>
+                                                        <td>password</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Nicolas</td>
+                                                        <td>nicolas@anonymous.com</td>
+                                                        <td>nicolas</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Mike</td>
+                                                        <td>mike@unnamedcompany.com</td>
+                                                        <td>mike</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sabrina</td>
+                                                        <td>sabrina@unnamedcompany.com</td>
+                                                        <td>sabrina</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sinclair</td>
+                                                        <td>sinclair@anothercompany.com</td>
+                                                        <td>sinclair</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">4.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.UserStepDefinitions.theFollowingUsersAreMembersOfOrganizations(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_0492145436.html"><span
+                                                class="keyword">And </span> The following users are members of organizations</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 027ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>user</td>
+                                                        <td>organization</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Mike</td>
+                                                        <td>Unnamed Company</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sabrina</td>
+                                                        <td>Unnamed Company</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Sinclair</td>
+                                                        <td>Another Company</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">5.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.ContentStepDefinitions.theFollowingContentsAreSaved(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_335247623.html"><span
+                                                class="keyword">And </span> The following contents are saved</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 010ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>organization</td>
+                                                        <td>name</td>
+                                                        <td>value</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Unnamed Company</td>
+                                                        <td>Unnamed Terms of Use</td>
+                                                        <td>Blablabla</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Another Company</td>
+                                                        <td>Another Terms of Use</td>
+                                                        <td>Blablabla</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">6.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.BudgetStepDefinitions.theFollowingBudgetsAreAvailable(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_0507166109.html"><span
+                                                class="keyword">And </span> The following budgets are available</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 013ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>organization</td>
+                                                        <td>name</td>
+                                                        <td>amountPerMember</td>
+                                                        <td>isDistributed</td>
+                                                        <td>sponsor</td>
+                                                        <td>rules</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Unnamed Company</td>
+                                                        <td>Unnamed Company Pot</td>
+                                                        <td>150</td>
+                                                        <td>true</td>
+                                                        <td>Sabrina</td>
+                                                        <td>Unnamed Terms of Use</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Another Company</td>
+                                                        <td>Another Company Pot</td>
+                                                        <td>200</td>
+                                                        <td>true</td>
+                                                        <td>Sinclair</td>
+                                                        <td>Another Terms of Use</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">7.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.AccountStepDefinitions.theFollowingAccountsAreCreated(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_0479951290.html"><span
+                                                class="keyword">And </span> The following accounts are created</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 005ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>owner</td>
+                                                        <td>budget</td>
+                                                        <td>amount</td>
+                                                        <td>initialAmount</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Mike</td>
+                                                        <td>Unnamed Company Pot</td>
+                                                        <td>150</td>
+                                                        <td>150</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">8.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.ProjectStepDefinitions.theFollowingProjectsAreCreated(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_0255738170.html"><span
+                                                class="keyword">And </span> The following projects are created</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 007ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>organization</td>
+                                                        <td>title</td>
+                                                        <td>leader</td>
+                                                        <td>status</td>
+                                                        <td>peopleRequired</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Unnamed Company</td>
+                                                        <td>Awesome Project</td>
+                                                        <td>Sabrina</td>
+                                                        <td>IN_PROGRESS</td>
+                                                        <td>2</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">9.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.CampaignStepDefinitions.theFollowingCampaignsAreRunning(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_01357082493.html"><span
+                                                class="keyword">And </span> The following campaigns are running</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 018ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>project</td>
+                                                        <td>budget</td>
+                                                        <td>title</td>
+                                                        <td>status</td>
+                                                        <td>donationsRequired</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Awesome Project</td>
+                                                        <td>Unnamed Company Pot</td>
+                                                        <td>Awesome Campaign</td>
+                                                        <td>IN_PROGRESS</td>
+                                                        <td>400</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">10.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.DonationStepDefinitions.theFollowingDonationsAreMade(io.cucumber.datatable.DataTable)">
+                                    <a href="pages/step-scenarios/step_946295249.html"><span
+                                                class="keyword">And </span> The following donations are made</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 045ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                                <div class="row w-100 p-3 m-0 scenarioDataTable">
+                                    <div class="w-100 text-left border border-dark table-responsive">
+                                        <table class="table table-hover small table-striped text-left pb-0">
+                                                <tr>
+                                                        <td>budget</td>
+                                                        <td>campaign</td>
+                                                        <td>contributor</td>
+                                                        <td>amount</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Unnamed Company Pot</td>
+                                                        <td>Awesome Campaign</td>
+                                                        <td>Mike</td>
+                                                        <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Unnamed Company Pot</td>
+                                                        <td>Awesome Campaign</td>
+                                                        <td>Sabrina</td>
+                                                        <td>75</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Another Company Pot</td>
+                                                        <td>Awesome Campaign</td>
+                                                        <td>Sinclair</td>
+                                                        <td>100</td>
+                                                </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">11.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.CommonStepDefinitions.userIsLoggedIn(java.lang.String)">
+                                    <a href="pages/step-scenarios/step_1443378157.html"><span
+                                                class="keyword">And </span> <span class="parameter">"Nicolas"</span> is logged in</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 106ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">12.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.DonationStepDefinitions.getsDonationsOfTheCampaign(java.lang.String,java.lang.String)">
+                                    <a href="pages/step-scenarios/step_552250465.html"><span
+                                                class="keyword">When </span> <span class="parameter">"Nicolas"</span> gets donations of the <span class="parameter">"Awesome Campaign"</span> campaign</a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 039ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row row_passed table-row-passed">
+                            <div class="col-9 text-left">
+                                <span class="text-left">13.</span>
+                                <span data-toggle="tooltip" title="fr.lesprojetscagnottes.core.steps.MainStepDefinitions.lastHTTPCodeWas(java.lang.String)">
+                                    <a href="pages/step-scenarios/step_01036866507.html"><span
+                                                class="keyword">Then </span> Last HTTP code was <span class="parameter">"403"</span></a>
+                                </span>
+                            </div>
+                            <div class="col-2 text-left small">
+                                0m 00s 000ms
+                            </div>
+                            <div class="col-1 text-right">
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                        </div>
+                </li>
+            </div>
+        </div>
+    </div>
+
+    </ul>
+        </div>
+    </main>
+
+<footer class="footer navbar-dark">
+    <div class="container-fluid">
+        <span>Cluecumber Report Plugin version 2.8.0 - Report generated on 2022-10-30 19:20:36.</span>
+    </div>
+</footer>    </body>
+    </html>
+
