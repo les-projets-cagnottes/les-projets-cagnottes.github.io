@@ -1,0 +1,871 @@
+
+
+    <!--
+    Copyright 2019 trivago N.V.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <base href="./../..">
+    <head title="Cluecumber Report - Scenarios with Step">
+        <title>Cluecumber Report - Scenarios with Step</title>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval';
+script-src * data: blob: 'unsafe-inline' 'unsafe-eval';
+connect-src * data: blob: 'unsafe-inline';
+img-src * data: blob: 'unsafe-inline';
+frame-src * data: blob: ;
+style-src * data: blob: 'unsafe-inline';
+font-src * data: blob: 'unsafe-inline';"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Cluecumber Report">
+<meta name="author" content="Cluecumber Report Plugin version 2.8.0">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/datatables.min.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
+<link rel="stylesheet" href="css/cluecumber.css" type="text/css">
+<link rel="stylesheet" href="css/cluecumber-custom.css"/>
+<link rel="stylesheet" href="css/cluecumber-additional.css"/>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/datatables.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/Chart.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+            // Data tables
+            $('.renderAsDataTable').on('draw.dt', function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            }).DataTable({
+                "oLanguage": {
+                    "sSearch": "Search:"
+                },
+                "pageLength": 25,
+                "responsive": true
+            });
+
+            $('.collapse').on('shown.bs.collapse', function (e) {
+                $(e.target).find("iframe").each(function (index, iframe) {
+                    resizeIframe(iframe);
+                })
+            });
+
+            // Lightbox
+            $("a.grouped_elements").fancybox();
+
+            // Tool tips
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Chart
+            var canvas = document.getElementById('chart-area');
+            var ctx = canvas.getContext("2d");
+            var chart = new Chart(ctx, {
+  "data": {
+    "labels": [
+      "passed",
+      "failed",
+      "skipped"
+    ],
+    "datasets": [
+      {
+        "data": [
+          31,
+          0,
+          0
+        ],
+        "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(255, 193, 7, 1.000)"
+        ]
+      }
+    ]
+  },
+  "options": {
+    "events": [
+      "click",
+      "mousemove"
+    ]
+  },
+  "type": "pie"
+});
+
+            var original;
+            if (chart.config.type === "pie") {
+                original = Chart.defaults.pie.legend.onClick;
+            } else {
+                original = Chart.defaults.global.legend.onClick;
+            }
+
+            chart.options.onClick = function (evt, elements) {
+                if (chart.config.type !== "pie") return;
+                chartArea = elements[0];
+                if (chartArea === undefined) return;
+                chartArea.hidden = !chartArea.hidden;
+                chart.update();
+                toggleVisibilityByStatus(chartArea._model.label, !chartArea.hidden)
+            };
+
+            chart.options.legend.onClick = function (evt, label) {
+                original.call(this, evt, label);
+                toggleVisibilityByStatus(label.text, label.hidden);
+            };
+
+            function toggleVisibilityByStatus(statusText, show) {
+                var card = $("#card_" + statusText);
+                if (card !== undefined) {
+                    if (show) {
+                        card.show();
+                    } else {
+                        card.hide();
+                    }
+                }
+
+                var row = $(".table-row-" + statusText);
+                if (row !== undefined) {
+                    if (show) {
+                        row.show();
+                    } else {
+                        row.hide();
+                    }
+                }
+            }
+
+
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='before-after-hooks-button']").click();
+            }
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='step-hooks-button']").click();
+            }
+            if (false) {
+                $(".btn-outline-secondary[data-cluecumber-item='doc-strings-button']").click();
+            }
+        }
+    );
+
+    function resizeIframe(iframe) {
+        iframe.style.height = (iframe.contentWindow.document.body.scrollHeight + 25) + 'px';
+    }
+</script>    </head>
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/scenario-summary.html">All Scenarios</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/scenario-sequence.html">Scenario Sequence</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/tag-summary.html">All Tags</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link text-white" href="pages/step-summary.html">All Steps</a>
+                    </li>
+                    <li class="nav-item">
+                                <a class="nav-link " href="pages/feature-summary.html">All Features</a>
+                    </li>
+            </ul>
+            <span class="text-light">2023-01-29 17:08:41</span>
+        </div>
+    </nav>
+    <main role="main" class="container">
+        <div class="cluecumber-template">
+            <div class="pb-2 mt-4 mb-2 border-bottom">
+                    <h3>Scenarios using Step 'Empty database'</h3>
+            </div>
+
+
+    <div class="row" id="scenario-summary">
+    <div class="col-sm-6  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Scenario Results</div>
+            <div class="card-body">
+    <div id="canvas-holder" class="w-100 text-center" style="min-height: 15rem;" data-cluecumber-item="chart">
+        <canvas id="chart-area" class="w-100"></canvas>
+    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Test Suite Time</div>
+            <div class="card-body">
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item" data-cluecumber-item="total-start">
+                        Started on:<br>2023-01-29 17:08:16</li>
+                    <li class="list-group-item" data-cluecumber-item="total-end">
+                        Ended on:<br>2023-01-29 17:08:31</li>
+                <li class="list-group-item" data-cluecumber-item="total-runtime">
+                    Test Runtime:<br>0m 15s 557ms
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3  h-auto" data-cluecumber-item="card">
+        <div class="card h-100">
+                <div class="card-header">Test Suite Summary</div>
+            <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" data-cluecumber-item="scenario-summary">
+                    31         Scenarios
+
+                </li>
+                <li class="list-group-item" data-cluecumber-item="scenario-summary">
+                        <a href="javascript:"
+                           onclick="document.location.hash='anchor-passed';">31
+                            passed</a>     <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+
+                        <br>
+                        <a href="javascript:"
+                           onclick="document.location.hash='anchor-failed';">0
+                            failed</a>     <i class="color-failed cluecumber-icon icon-failed" data-toggle="tooltip"
+       title="failed"><span style="display:none">failed</span></i>
+
+                        <br>
+                        <a href="javascript:"
+                           onclick="document.location.hash='anchor-skipped';">0
+                            skipped</a>     <i class="color-skipped cluecumber-icon icon-skipped" data-toggle="tooltip"
+       title="skipped"><span style="display:none">skipped</span></i>
+
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+        <a class="anchor" id="anchor-passed"></a>
+        <div class="row" id="card_passed" data-cluecumber-item="scenario-summary-table">
+            <div class=" col-sm-12">
+                <div class="card">
+
+                            <div class="card-header border-color-passed">
+                                31
+        passed Scenarios
+    <i class="color-passed cluecumber-icon icon-passed" data-toggle="tooltip"
+       title="passed"><span style="display:none">passed</span></i>
+                            </div>
+
+                    <div class="card-body">
+                        <table id="results_passed" class="table table-hover renderAsDataTable">
+                            <thead>
+                            <tr>
+                                <th class="text-left">Feature</th>
+                                <th class="text-left">Scenario</th>
+                                <th>Started</th>
+                                <th>Duration</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for listing authorities | classpath:features/authority_list.feature">
+                                                    <a href="pages/feature-scenarios/feature_0.html">Authority - List</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_1.html"
+                                                   style="word-break: break-all">A member can list his global authorities</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:16.151Z">
+                                                2023-01-29<br>17:08:16
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="1,282,154,204">
+                                                <span class="nobr">0m 01s 282ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating budgets | classpath:features/budget_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_1.html">Budget - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_2.html"
+                                                   style="word-break: break-all">A sponsor can create a budget</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:17.498Z">
+                                                2023-01-29<br>17:08:17
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="558,730,872">
+                                                <span class="nobr">0m 00s 558ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating budgets | classpath:features/budget_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_1.html">Budget - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_3.html"
+                                                   style="word-break: break-all">A non-member cannot create a budget</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:18.105Z">
+                                                2023-01-29<br>17:08:18
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="405,521,068">
+                                                <span class="nobr">0m 00s 405ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating budgets | classpath:features/budget_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_1.html">Budget - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_4.html"
+                                                   style="word-break: break-all">A non-sponsor cannot create a budget</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:18.538Z">
+                                                2023-01-29<br>17:08:18
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="307,333,726">
+                                                <span class="nobr">0m 00s 307ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating budgets | classpath:features/budget_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_1.html">Budget - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_5.html"
+                                                   style="word-break: break-all">A sponsor cannot create a budget if sponsor, rules or organization are missing</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:18.883Z">
+                                                2023-01-29<br>17:08:18
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="404,069,543">
+                                                <span class="nobr">0m 00s 404ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for listing budgets | classpath:features/budget_list.feature">
+                                                    <a href="pages/feature-scenarios/feature_2.html">Budget - List</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_6.html"
+                                                   style="word-break: break-all">A member can list his organization&#39;s budgets</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:19.321Z">
+                                                2023-01-29<br>17:08:19
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="532,580,061">
+                                                <span class="nobr">0m 00s 532ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for listing budgets | classpath:features/budget_list.feature">
+                                                    <a href="pages/feature-scenarios/feature_2.html">Budget - List</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_7.html"
+                                                   style="word-break: break-all">A non member of organization cannot list organization&#39;s budgets</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:19.906Z">
+                                                2023-01-29<br>17:08:19
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="471,315,499">
+                                                <span class="nobr">0m 00s 471ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for updating budgets | classpath:features/budget_update.feature">
+                                                    <a href="pages/feature-scenarios/feature_3.html">Budget - Update</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_8.html"
+                                                   style="word-break: break-all">A sponsor can update budgets</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:20.399Z">
+                                                2023-01-29<br>17:08:20
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="559,956,191">
+                                                <span class="nobr">0m 00s 559ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for updating budgets | classpath:features/budget_update.feature">
+                                                    <a href="pages/feature-scenarios/feature_3.html">Budget - Update</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_9.html"
+                                                   style="word-break: break-all">A sponsor cannot update budgets if organization, sponsor or rules is missing</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:20.986Z">
+                                                2023-01-29<br>17:08:20
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="427,209,207">
+                                                <span class="nobr">0m 00s 427ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for updating budgets | classpath:features/budget_update.feature">
+                                                    <a href="pages/feature-scenarios/feature_3.html">Budget - Update</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_10.html"
+                                                   style="word-break: break-all">A non-member cannot update a budget</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:21.437Z">
+                                                2023-01-29<br>17:08:21
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="439,452,498">
+                                                <span class="nobr">0m 00s 439ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for updating budgets | classpath:features/budget_update.feature">
+                                                    <a href="pages/feature-scenarios/feature_3.html">Budget - Update</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_11.html"
+                                                   style="word-break: break-all">A non-sponsor cannot update a budget</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:21.919Z">
+                                                2023-01-29<br>17:08:21
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="356,870,203">
+                                                <span class="nobr">0m 00s 356ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for updating budgets | classpath:features/budget_update.feature">
+                                                    <a href="pages/feature-scenarios/feature_3.html">Budget - Update</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_12.html"
+                                                   style="word-break: break-all">A sponsor cannot re-affect a budget to a non-sponsor member</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:22.297Z">
+                                                2023-01-29<br>17:08:22
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="393,324,173">
+                                                <span class="nobr">0m 00s 393ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for getting donations on a campaign | classpath:features/campaign_getdonations.feature">
+                                                    <a href="pages/feature-scenarios/feature_4.html">Campaign - Get Donations</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_13.html"
+                                                   style="word-break: break-all">A member of a campaign&#39;s organization can get campaign&#39;s donations</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:22.706Z">
+                                                2023-01-29<br>17:08:22
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="671,836,045">
+                                                <span class="nobr">0m 00s 671ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for getting donations on a campaign | classpath:features/campaign_getdonations.feature">
+                                                    <a href="pages/feature-scenarios/feature_4.html">Campaign - Get Donations</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_14.html"
+                                                   style="word-break: break-all">A non-member of campaign&#39;s organization cannot get campaign&#39;s donations</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:23.415Z">
+                                                2023-01-29<br>17:08:23
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="731,009,877">
+                                                <span class="nobr">0m 00s 731ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_5.html">Donation - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_15.html"
+                                                   style="word-break: break-all">A member can contribute on a campaign in progress whose deadline has not been reached</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:24.166Z">
+                                                2023-01-29<br>17:08:24
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="495,124,673">
+                                                <span class="nobr">0m 00s 495ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_5.html">Donation - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_16.html"
+                                                   style="word-break: break-all">A member cannot contribute on a campaign with a nonexistent account or campaign</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:24.691Z">
+                                                2023-01-29<br>17:08:24
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="530,194,199">
+                                                <span class="nobr">0m 00s 530ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_5.html">Donation - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_17.html"
+                                                   style="word-break: break-all">A member cannot contribute on a campaign in progress whose deadline has been reached</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:25.243Z">
+                                                2023-01-29<br>17:08:25
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="473,136,671">
+                                                <span class="nobr">0m 00s 473ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_5.html">Donation - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_18.html"
+                                                   style="word-break: break-all">A member cannot contribute on a campaign not in progress</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:25.733Z">
+                                                2023-01-29<br>17:08:25
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="432,131,254">
+                                                <span class="nobr">0m 00s 432ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_5.html">Donation - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_19.html"
+                                                   style="word-break: break-all">A member cannot contribute on a campaign not associated with the budget referenced</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:26.187Z">
+                                                2023-01-29<br>17:08:26
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="457,987,726">
+                                                <span class="nobr">0m 00s 457ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for create donations | classpath:features/donation_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_5.html">Donation - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_20.html"
+                                                   style="word-break: break-all">A member cannot contribute on a campaign if he has not enough budget</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:26.657Z">
+                                                2023-01-29<br>17:08:26
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="417,411,509">
+                                                <span class="nobr">0m 00s 417ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating ideas | classpath:features/idea_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_6.html">Idea - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_21.html"
+                                                   style="word-break: break-all">A member can create an idea</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:27.095Z">
+                                                2023-01-29<br>17:08:27
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="352,931,788">
+                                                <span class="nobr">0m 00s 352ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating ideas | classpath:features/idea_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_6.html">Idea - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_22.html"
+                                                   style="word-break: break-all">A member can anonymously create an idea</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:27.466Z">
+                                                2023-01-29<br>17:08:27
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="252,409,663">
+                                                <span class="nobr">0m 00s 252ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating ideas | classpath:features/idea_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_6.html">Idea - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_23.html"
+                                                   style="word-break: break-all">A member can list organization ideas</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:27.730Z">
+                                                2023-01-29<br>17:08:27
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="260,654,092">
+                                                <span class="nobr">0m 00s 260ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for granting organization authorities | classpath:features/orgauthority_grant.feature">
+                                                    <a href="pages/feature-scenarios/feature_7.html">Organization Authorities - Grant</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_24.html"
+                                                   style="word-break: break-all">An admin can grant an organization member</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:28.001Z">
+                                                2023-01-29<br>17:08:28
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="372,169,641">
+                                                <span class="nobr">0m 00s 372ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for granting organization authorities | classpath:features/orgauthority_grant.feature">
+                                                    <a href="pages/feature-scenarios/feature_7.html">Organization Authorities - Grant</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_25.html"
+                                                   style="word-break: break-all">An organization owner can grant a member</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:28.404Z">
+                                                2023-01-29<br>17:08:28
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="643,068,392">
+                                                <span class="nobr">0m 00s 643ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for granting organization authorities | classpath:features/orgauthority_grant.feature">
+                                                    <a href="pages/feature-scenarios/feature_7.html">Organization Authorities - Grant</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_26.html"
+                                                   style="word-break: break-all">An organization owner can withdraw rights to a member</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:29.066Z">
+                                                2023-01-29<br>17:08:29
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="620,046,234">
+                                                <span class="nobr">0m 00s 620ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for granting organization authorities | classpath:features/orgauthority_grant.feature">
+                                                    <a href="pages/feature-scenarios/feature_7.html">Organization Authorities - Grant</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_27.html"
+                                                   style="word-break: break-all">A member not owner of an organization cannot grant a member</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:29.707Z">
+                                                2023-01-29<br>17:08:29
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="573,996,608">
+                                                <span class="nobr">0m 00s 573ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for granting organization authorities | classpath:features/orgauthority_grant.feature">
+                                                    <a href="pages/feature-scenarios/feature_7.html">Organization Authorities - Grant</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_28.html"
+                                                   style="word-break: break-all">An organization owner cannot grant if organization or member is not existing</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:30.301Z">
+                                                2023-01-29<br>17:08:30
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="497,274,505">
+                                                <span class="nobr">0m 00s 497ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for granting organization authorities | classpath:features/orgauthority_grant.feature">
+                                                    <a href="pages/feature-scenarios/feature_7.html">Organization Authorities - Grant</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_29.html"
+                                                   style="word-break: break-all">An organization owner cannot grant a user not member of organization</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:30.818Z">
+                                                2023-01-29<br>17:08:30
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="346,179,333">
+                                                <span class="nobr">0m 00s 346ms</span>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating projects | classpath:features/project_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_8.html">Projects - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_30.html"
+                                                   style="word-break: break-all">A member can create a project</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:31.173Z">
+                                                2023-01-29<br>17:08:31
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="266,056,177">
+                                                <span class="nobr">0m 00s 266ms</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-row-passed">
+                                            <td class="text-left">
+                                                <span data-toggle="tooltip" title="  Verifies rules for creating projects | classpath:features/project_create.feature">
+                                                    <a href="pages/feature-scenarios/feature_8.html">Projects - Create</a>
+                                                </span>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="pages/scenario-detail/scenario_31.html"
+                                                   style="word-break: break-all">A non-member cannot create a project</a>
+                                            </td>
+                                            <td class="text-center small" data-order="2023-01-29T17:08:31.455Z">
+                                                2023-01-29<br>17:08:31
+                                            </td>
+                                            <td class="text-right small"
+                                                data-order="253,350,377">
+                                                <span class="nobr">0m 00s 253ms</span>
+                                            </td>
+                                        </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+<footer class="footer navbar-dark">
+    <div class="container-fluid">
+        <span>Cluecumber Report Plugin version 2.8.0 - Report generated on 2023-01-29 17:08:41.</span>
+    </div>
+</footer>    </body>
+    </html>
+
